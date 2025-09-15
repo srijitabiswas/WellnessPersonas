@@ -46,7 +46,7 @@ Personas help design personalized wellness campaigns.
 
 Clone this repository:
 
-git clone https://github.com/your-username/WellnessPersonas.git
+git clone https://github.com/srijitabiswas/WellnessPersonas.git
 cd WellnessPersonas
 
 
