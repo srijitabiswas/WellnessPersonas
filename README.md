@@ -1,76 +1,98 @@
-Wellness Personas of SNU 🎯
+# 💪 Wellness Personas of SNU
 
-This project uses K-Means clustering on student lifestyle survey data to identify different wellness personas at SNU. The insights can help the Health Club design targeted wellness programs based on students’ habits and preferences.
+Welcome to **Wellness Personas of SNU**, an interactive web app that uncovers your lifestyle persona through a blend of **data-driven insights** and **human-centered design**.  
+Built with ❤️ by **Prakriti**, **Sresthita**, and **Srijita**, this app helps you explore your wellness style based on your daily habits and preferences.
 
-📂 Project Structure
-📁 Wellness-Personas-SNU
-│── 📓 Untitled6.ipynb   # Jupyter Notebook with code
-│── 📊 data.csv                  # Student survey dataset
-│── 📄 README.md                 # Project documentation
+🔗 **Live App:** [https://wellnesspersonas-cthr6lsavffhyqmycxlyko.streamlit.app/](https://wellnesspersonas-cthr6lsavffhyqmycxlyko.streamlit.app/)
 
-⚙️ Methodology
+---
 
-Data Collection – Surveyed 111 students via Google Forms and exported as CSV.
+## 🌟 Project Overview
+This project combines **Machine Learning (KMeans Clustering)** with a beautifully designed **Streamlit interface** to group users into unique lifestyle personas.  
 
-Preprocessing – Cleaned missing values, removed outliers, standardized features.
+By answering a few quick questions about your habits (like how often you eat out, your food budget, or your hobbies), you’ll discover which persona best represents your lifestyle and wellness approach.  
 
-Clustering – Applied K-Means, tested k=2–10, finalized k=4.
+Each persona reflects a distinct identity — from the calm **Classic Soul ☕** to the energetic **Active Extrovert 💪** — helping students understand themselves better and embrace balanced living.
 
-Evaluation – Used Silhouette score and Elbow method for validation.
+---
 
-Visualization – Heatmaps, scatterplots, and cluster distribution charts.
+## 🧠 Personas (Clusters)
+| Cluster | Persona | Description |
+|:--:|:--|:--|
+| 0 | 🍕 **Social Foodie** | Loves exploring cafes, dining out, and sharing food experiences with friends. |
+| 1 | 🥗 **Trendy Eater** | Follows the latest food trends and enjoys aesthetic dining. |
+| 2 | 🍰 **Sweet Lover** | Dessert is your love language — life is sweeter with cake! |
+| 3 | ☕ **Classic Soul** | Graceful, balanced, and comforted by the familiar — finds beauty in timeless simplicity. |
+| 4 | 🎨 **Creative Hobbyist** | Expresses emotions through art, design, or creative crafts. |
+| 5 | 📚 **Chill Introvert** | Finds joy in peace, books, and cozy solitude. |
+| 6 | 🧘 **Balanced Persona** | Lives in perfect harmony between fun, food, and wellness. |
+| 7 | 💪 **Active Extrovert** | Thrives in sports, fitness, and social adventures. |
+| 8 | 🌿 **Minimalist** | Prefers simple joys, mindfulness, and calm over chaos. |
+| 9 | 🔥 **Passionate Creator** | Dedicated to creating and mastering their craft. |
 
-Insights – Created four student personas based on lifestyle traits.
+---
 
-🔍 Key Findings
+## 🧩 Features
+✨ Interactive **sliders** for lifestyle inputs  
+🎯 Dynamic **persona visualization** (radar chart)  
+🌙 Aesthetic **dark theme** interface  
+🎉 **Emoji burst animation** for each persona  
+💬 Personalized motivational quotes  
+🚀 **Fast Streamlit deployment** with ML integration  
 
-Cluster 0 – Balanced Budgeters: Manage food + hobbies smartly.
+---
 
-Cluster 1 – Social Spenders: Spend more on outings, active in groups.
+## 🛠️ Tech Stack
+- **Frontend:** Streamlit (custom CSS + HTML)
+- **Backend:** Python  
+- **Machine Learning:** KMeans Clustering  
+- **Visualization:** Matplotlib  
+- **Libraries:** `numpy`, `pandas`, `matplotlib`, `joblib`, `scikit-learn`
 
-Cluster 2 – Low-Budget Hobbyists: Prioritize hobbies within a budget.
+---
 
-Cluster 3 – Minimalists: Spend less overall, limited participation.
+📦 WellnessPersonas
+│
+├── app.py # Main Streamlit application
+├── utils.py # Helper functions (ML logic, clustering rules)
+├── model.pkl # Trained KMeans model
+├── scaler.pkl # Data scaler
+├── features.txt # Ordered list of input features
+├── requirements.txt # Project dependencies
+└── README.md # Project documentation
 
-📊 Results
 
-The clustering revealed clear lifestyle groups.
+---
 
-Train Silhouette Score: 0.313
+## 🚀 Run Locally
 
-Test Silhouette Score: 0.121
+If you want to run the app on your system:
 
-Personas help design personalized wellness campaigns.
-
-🚀 How to Run
-
-Clone this repository:
-
+```bash
+# 1️⃣ Clone the repository
 git clone https://github.com/srijitabiswas/WellnessPersonas.git
 cd WellnessPersonas
 
-
-Install dependencies:
-
+# 2️⃣ Install dependencies
 pip install -r requirements.txt
 
+# 3️⃣ Run the app
+streamlit run app.py
+Then open http://localhost:8501 in your browser.
 
-Open Jupyter Notebook:
+💡 Authors
 
-jupyter notebook Untitled6.ipynb
+👩‍💻 Prakriti Sarkar
+👩‍💻 Sresthita Nath
+👩‍💻 Srijita Biswas
 
-📌 Future Scope
+🪷 “Wellness is not a goal; it’s a way of living every day.”
 
-Add more lifestyle features (sleep, stress, exercise).
+🌍 Live Demo
 
-Explore other clustering methods (DBSCAN, Hierarchical).
+👉 Explore the live app here:
 
-Build a dashboard for interactive persona exploration.
+🔗 https://wellnesspersonas-cthr6lsavffhyqmycxlyko.streamlit.app/
+ 
 
-👩‍💻 Contributors
-
-Sresthita
-
-Prakriti
-
-Srijita
+## 📂 Repository Structure
