@@ -1,0 +1,4 @@
+eat_out
+food_budget
+sweet_tooth
+hobby_hours
