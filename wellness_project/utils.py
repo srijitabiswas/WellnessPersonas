@@ -1,23 +1,41 @@
 # utils.py
 import joblib
 import numpy as np
+import os
 
 def load_model_and_scaler():
-    model = joblib.load("model.pkl")
-    scaler = joblib.load("scaler.pkl")
+    """Load model and scaler safely from the current directory."""
+    base_path = os.path.dirname(__file__)  # Folder where utils.py is
+    model_path = os.path.join(base_path, "model.pkl")
+    scaler_path = os.path.join(base_path, "scaler.pkl")
+
+    # Safety check: confirm both files exist
+    if not os.path.exists(model_path):
+        raise FileNotFoundError(f"Model file not found at {model_path}")
+    if not os.path.exists(scaler_path):
+        raise FileNotFoundError(f"Scaler file not found at {scaler_path}")
+
+    model = joblib.load(model_path)
+    scaler = joblib.load(scaler_path)
     return model, scaler
 
+
 def load_feature_order():
-    with open("features.txt", "r") as f:
+    base_path = os.path.dirname(__file__)
+    feature_path = os.path.join(base_path, "features.txt")
+    with open(feature_path, "r") as f:
         return [line.strip() for line in f.readlines()]
+
 
 def preprocess_user_input(user_input, feature_order, scaler):
     data = np.array([[user_input[feat] for feat in feature_order]])
     scaled = scaler.transform(data)
     return scaled, feature_order
 
+
 def predict_cluster(model, processed):
     return int(model.predict(processed)[0])
+
 
 # Optional: rule-based layer for sanity correction
 def rule_based_cluster(user_input):
@@ -39,14 +57,15 @@ def rule_based_cluster(user_input):
         return 6  # Balanced Persona
     if user_input["hobby_hours"] <= 5 and user_input["eat_out"] <= 3:
         return 5  # Chill Introvert
-    return 3  # Default: Dessert Devotee
+    return 3  # Default: Classic Soul
+
 
 def get_cluster_description(cluster):
     descriptions = {
         0: "🍕 Social Foodie — You love exploring cafes, dining out, and sharing food experiences with friends.",
         1: "🥗 Trendy Eater — Always chasing the latest food trends and dining aesthetics.",
         2: "🍰 Sweet Lover — Dessert is your love language. You believe there’s always room for one more bite of cake!",
-        3: "☕ The Classic Soul, Graceful, balanced, and comforted by the familiar — you find beauty in timeless habits and heartfelt simplicity.",
+        3: "☕ The Classic Soul — Graceful, balanced, and comforted by the familiar. You find beauty in timeless habits and heartfelt simplicity.",
         4: "🎨 Creative Hobbyist — You unwind by creating — painting, crafting, or designing is your therapy.",
         5: "📚 Chill Introvert — You enjoy peaceful evenings, reading, or watching shows in your cozy space.",
         6: "🧘 Balanced Persona — You balance fun, food, and wellness in perfect harmony.",
