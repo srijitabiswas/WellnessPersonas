@@ -1,7 +1,7 @@
 # 💪 Wellness Personas of SNU
 
 Welcome to **Wellness Personas of SNU**, an interactive web app that uncovers your lifestyle persona through a blend of **data-driven insights** and **human-centered design**.  
-Built with ❤️ by **Prakriti**, **Sresthita**, and **Srijita**, this app helps you explore your wellness style based on your daily habits and preferences.
+Built by **Prakriti**, **Sresthita**, and **Srijita**, this app helps you explore your wellness style based on your daily habits and preferences.
 
 🔗 **Live App:** [https://wellnesspersonas-cthr6lsavffhyqmycxlyko.streamlit.app/](https://wellnesspersonas-cthr6lsavffhyqmycxlyko.streamlit.app/)
 
